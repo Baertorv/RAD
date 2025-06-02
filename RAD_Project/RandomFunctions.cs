@@ -20,16 +20,19 @@ namespace RAD_Project
 
         public static BigInteger GenerateRandom89Bit()
         {
-            Span<byte> bytes = stackalloc byte[16];
-            RandomNumberGenerator.Fill(bytes);
+            Span<byte> buffer = stackalloc byte[12];
+            BigInteger value;
 
-            BigInteger value = BitConverter.ToUInt64(bytes[..8]) |
-                        ((BigInteger)BitConverter.ToUInt64(bytes[8..]) << 64);
+            do
+            {
+                RandomNumberGenerator.Fill(buffer);
+                buffer[^1] &= 0x1F;
 
-            value &= p;
+                value = new BigInteger(buffer, isUnsigned: true, isBigEndian: true);
+            }
+            while (value >= p);
 
-            // Rare: retry if it's all 1s (p)
-            return value == p ? GenerateRandom89Bit() : value;
+            return value;
         }
     }
 }
