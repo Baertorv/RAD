@@ -1,10 +1,11 @@
 using System.Security.Cryptography;
+using System.Numerics;
 namespace RAD_Project
 {
     public static class RandomFunctions
     {
         private const int q = 89;
-        private static readonly UInt128 p = (UInt128.One << q) - 1;
+        private static readonly BigInteger p = (BigInteger.One << q) - 1;
         public static ulong GenerateOdd64Bit()
         {
             Span<byte> buffer = stackalloc byte[8];
@@ -17,15 +18,15 @@ namespace RAD_Project
             return value;
         }
 
-        public static UInt128 GenerateRandom89Bit()
+        public static BigInteger GenerateRandom89Bit()
         {
             Span<byte> bytes = stackalloc byte[16];
             RandomNumberGenerator.Fill(bytes);
 
-            UInt128 value = BitConverter.ToUInt64(bytes[..8]) |
-                        ((UInt128)BitConverter.ToUInt64(bytes[8..]) << 64);
+            BigInteger value = BitConverter.ToUInt64(bytes[..8]) |
+                        ((BigInteger)BitConverter.ToUInt64(bytes[8..]) << 64);
 
-            value &= (UInt128.One << q) - 1;
+            value &= p;
 
             // Rare: retry if it's all 1s (p)
             return value == p ? GenerateRandom89Bit() : value;

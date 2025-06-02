@@ -1,9 +1,11 @@
+using System.Numerics;
+
 namespace RAD_Project
 {
     public static class HashFunctions
     {
         private const int q = 89;
-        private static readonly UInt128 p = (UInt128.One << q) - 1;
+        private static readonly BigInteger p = (BigInteger.One << q) - 1;
         public static ulong MultiplyShift(ulong x, ulong a, int l)
         {
             if (l < 1 || l >= 64)
@@ -13,14 +15,14 @@ namespace RAD_Project
             return result;
         }
 
-        public static ulong MultiplyModPrime(ulong x, UInt128 a, UInt128 b, int l)
+        public static ulong MultiplyModPrime(ulong x, BigInteger a, BigInteger b, int l)
         {
-            UInt128 y = a * x + b;
+            BigInteger y = a * x + b;
             y = ModP(y);
             return (ulong)(y & ((1UL << l) - 1));
         }
 
-        private static UInt128 ModP(UInt128 x)
+        private static BigInteger ModP(BigInteger x)
         {
             var y = (x & p) + (x >> q);
             if (y >= p) y -= p;

@@ -26,3 +26,4 @@ C:\Users\andre\Documents\Studie\RAD\RAD_Project\obj\Debug\net9.0\refint\RAD_Proj
 C:\Users\andre\Documents\Studie\RAD\RAD_Project\obj\Debug\net9.0\RAD_Project.pdb
 C:\Users\andre\Documents\Studie\RAD\RAD_Project\obj\Debug\net9.0\RAD_Project.genruntimeconfig.cache
 C:\Users\andre\Documents\Studie\RAD\RAD_Project\obj\Debug\net9.0\ref\RAD_Project.dll
+C:\Users\andre\Documents\Studie\RAD\RAD_Project\obj\Debug\net9.0\RAD_Project.sourcelink.json
