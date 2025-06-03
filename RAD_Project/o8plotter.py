@@ -3,6 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
+#REQUIRES TASK 8 TO HAVE BEEN RUN, AND THE FILES NEED TO BE DIRECTLY IN RAD_PROJECT FOLDER, NOT SUB
+
 with open("true_s.txt", "r") as f:
     true_S = int(f.read().strip())
 
