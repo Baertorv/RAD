@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RAD_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f530e04dc698b2e6a9ce4063bca78f0e0bb0099b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b9be998d2ad8609126e76b81e3357e6ee795861")]
 [assembly: System.Reflection.AssemblyProductAttribute("RAD_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RAD_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#REQUIRES TASK 7 TO HAVE BEEN RUN, AND THE FILES NEED TO BE DIRECTLY IN RAD_PROJECT FOLDER, NOT SUB
+
 true_S = None
 mse = None
 
