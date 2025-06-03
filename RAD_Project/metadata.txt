@@ -1,2 +1,0 @@
-True S: 13222784
-Mean Squared Error (MSE): 21309415093

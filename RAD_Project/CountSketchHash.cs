@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using System.Numerics;
 
 public class CountSketchHash
@@ -20,7 +21,8 @@ public class CountSketchHash
         BigInteger gx = g.Evaluate(x);
 
         ulong h = (ulong)(gx & (m - 1));
-        int s = ((gx >> 88) & 1) == 0 ? 1 : -1;
+        int bx = (int)(gx >> (89 - 1));
+        int s = 1 - 2 * bx;
 
         return (h, s);
     }

@@ -18,15 +18,9 @@ namespace RAD_Project
         public static ulong MultiplyModPrime(ulong x, BigInteger a, BigInteger b, int l)
         {
             BigInteger y = a * x + b;
-            y = ModP(y);
-            return (ulong)(y & ((1UL << l) - 1));
-        }
-
-        private static BigInteger ModP(BigInteger x)
-        {
-            var y = (x & p) + (x >> q);
+            y = (y & p) + (y >> q);
             if (y >= p) y -= p;
-            return y;
+            return (ulong)(y & ((1UL << l) - 1));
         }
 
         public static long ComputeSquareSum(IEnumerable<Tuple<ulong, int>> stream, ChainedHashTable table)
